@@ -11,8 +11,6 @@ public class jarvis extends JavaPlugin {
 	
 	public void onDisable(){
 		
-
-	w
 	}
 	
 }
