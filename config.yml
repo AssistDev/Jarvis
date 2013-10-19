@@ -40,7 +40,7 @@
 userFull: applenick3
 
 # Enter what you want Jarvis to change your DisplayName to and refer to you as
-nick: &4Apple
+userNick: ~4Apple
 
-# This will be a keyword for Jarvis to authenticate you with
-pass: Apples
+# This will be a 4 digit pin
+pin: 1234
