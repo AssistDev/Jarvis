@@ -44,3 +44,5 @@ userNick: ~4Apple
 
 # This will be a 4 digit pin
 pin: 1234
+
+motd: ~3This server is run by ~1Jarvis 0.0.1
