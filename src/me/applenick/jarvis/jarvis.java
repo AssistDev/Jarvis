@@ -13,6 +13,7 @@ public class jarvis extends JavaPlugin {
 	public static String nick = "";
 	public static String Pin = "" ; 
 	public static String motd = "";
+	public boolean Trusted = false;
 
 	
 	public void onEnable(){
@@ -38,8 +39,19 @@ public class jarvis extends JavaPlugin {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[] args){
 		if(cmd.getName().equalsIgnoreCase("jarvis")){
-			
+			//add later help stuff
 		}
+		
+		else if(cmd.getName().equalsIgnoreCase("login")){
+			if(args[1].equalsIgnoreCase(Pin)){
+				sender.sendMessage(ChatColor.DARK_GRAY + "Authenticating...");
+				sender.sendMessage(ChatColor.GREEN + "Suscessfully Logged in!");
+				boolean Trusted = true;
+				return true;
+				
+			}
+		}
+		return true;
 	}
 	
 	
