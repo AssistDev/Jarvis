@@ -38,9 +38,10 @@ public class jarvis extends JavaPlugin {
 		
 	}
 	
+	/** Don't accept this fork. Just pointing out a few bugs. */
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[] args){
 		if(cmd.getName().equalsIgnoreCase("jarvis")){
-			if(!(sender.equals(Trusted))){
+			if(!(sender.equals(Trusted))){ // 'Trusted' is a boolean, therefore sender will never be equal to it. I suggest you to use an ArrayList<String> that stores the trusted player names.
 				sender.sendMessage(ChatColor.DARK_RED + "You are not logged in.");
 				sender.sendMessage(ChatColor.AQUA + "Use /login to verify your account.");
 			}
@@ -48,20 +49,20 @@ public class jarvis extends JavaPlugin {
 		
 		else if(cmd.getName().equalsIgnoreCase("login")){
 			Player p = (Player) sender;
-			if(args[1].equalsIgnoreCase(Pin)){
+			if(args[1].equalsIgnoreCase(Pin)){ // If args[1] is your pin, then confirm authentication
 				PacketUtils.displayLoadingBar("Authenticating...", "Authenticated", p, 5, true);
 				sender.sendMessage(ChatColor.DARK_GRAY + "Authenticating...");
-				sender.sendMessage(ChatColor.GREEN + "Suscessfully Logged in!");
+				sender.sendMessage(ChatColor.GREEN + "Suscessfully Logged in!"); // Spelling mistake
 				boolean Trusted = true;
 				return true;
 			}
-			else if(args[1].equalsIgnoreCase(Pin)){
+			else if(args[1].equalsIgnoreCase(Pin)){ // If args[1] is your pin, then deconfirm (is that a word?) authentication. Remove everything but the 'else'. 
 				PacketUtils.displayLoadingBar("Authenticating...", "Authentication Failed", p, 5, true);
 				sender.sendMessage(ChatColor.DARK_RED + "Authentication Failed.");
 				return true;
 			}
 		}
-		return true;
+		return true; // You should return false if nothing else works.
 	}
 	
 	
@@ -70,6 +71,7 @@ public class jarvis extends JavaPlugin {
         return Message.replaceAll("~([a-z0-9])", ChatColor.COLOR_CHAR + "$1");
     }
 
+	/** Unused */
 	public static Plugin getInstance() {
 		// TODO Auto-generated method stub
 		return null;
